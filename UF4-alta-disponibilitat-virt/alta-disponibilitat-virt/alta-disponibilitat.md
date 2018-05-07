@@ -1,9 +1,9 @@
-#Alta disponibilitat
+# Alta disponibilitat
 **INS Carles Vallbona**
 **Pau Tomé**
 **2017/2018**
 
-#Alta disponibilitat
+# Alta disponibilitat
 **Definició: **
 
 Capacitat de que aplicacions i dades es trobin operatius per als usuaris autoritzats en tot moment, degut al seu caràcter crític.
@@ -13,7 +13,7 @@ Les empreses amb alta disponibilitat són més tolerants a fallades del
 sistema, minimitzant el risc d'inactivitat.
 ~~~
 
-- **Redundància en dispositius hardware: **possibilita, en cas de fallada, continuïtat del servei. 
+- **Redundància en dispositius hardware: **possibilita, en cas de fallada, continuïtat del servei.
 
 Exemples:
 
@@ -30,24 +30,24 @@ Exemples:
 Exemple de tècniques a usar:
 
 ~~~
-   - Sistemas RAID d’emmagatzematge 
+   - Sistemas RAID d’emmagatzematge
    Les més habituals RAID1 i RAID5 (vistes a la UF1).
 
    - Centres de processament de dades (CPD) de recolzament
    Garanteixen còpies de seguretat en diverses ubicacions geogràfiques.
 ~~~
 
-#Solucions d’alta disponibilitat
+# Solucions d’alta disponibilitat
 
 - **Redundància en les comunicacions:** Contractació de diferents connexions a la xarxa (Internet) independents, per poder disposar d'alternatives en cas de caiguda d'alguna connexió.
 
 - **SAN, Fibre channel i iSCSI:** Una SAN (Storage Area Network) és una xarxa concebuda per a connectar servidors, matrius (arrays) de discos i libreries de suport. Principalment, basada en tecnología fibre channel i més recentement en iSCSI.
 
-- **Balanceig de càrrega i Clustering:** Redundància de servidors i distribució de tasques i comunicacions. 
+- **Balanceig de càrrega i Clustering:** Redundància de servidors i distribució de tasques i comunicacions.
 
 - **Independència en l’administració i configuració de aplicacions i serveis:** Mitjançant la virtualització.
 
-#Balanceig de càrrega
+# Balanceig de càrrega
 
 **Balancejador de càrrega:** dispositiu hardware o software connectat a un conjunt de servidors que assigna i reparteix les peticions que provenen dels clients als diversos servidores als que es connecta.
 
@@ -84,28 +84,28 @@ por la SAN. L'administrador del sistema te el mateix accés i drets a la LUN com
 
 #Balanceig de càrrega
 
-**Utilitat:** Poder repartir la càrrega y excloure aquelles connexions de destí que es trobin caigudes en un moment determinat. 
+**Utilitat:** Poder repartir la càrrega y excloure aquelles connexions de destí que es trobin caigudes en un moment determinat.
 
 **Exemple:** Un client no pot contactar amb el seu servidor DNS (caigut). El balancejador de càrrega detectarà que està inactiva i les peticions s’enviaran a una altre servidor DNS connectat al dispositiu encarregat del balanceig de la carga.
 
 **Aplicacions:** Repartir peticions de xarxa entre múltiples servidors web, DNS, etc. redundants, o entre vàries connexions de xarxa pública independents.
 
-#Balanceig de càrrega
+# Balanceig de càrrega
 
 **Exemple:** Per unificar dues o més connexions amb salida cap a Internet en una sola. S’instal·la un balancejador de càrrega al que es connecten vàries línies d’Internet.
- 
-Exemple: 
+
+Exemple:
 
 ~~~
 
 Pfsense:
-- Podem repartir la càrrega de sortida a Internet entre les línies. 
-- Es pot definir quina quantitat de peticions sortiran per cada línia 
+- Podem repartir la càrrega de sortida a Internet entre les línies.
+- Es pot definir quina quantitat de peticions sortiran per cada línia
 - Depenent per exemple de la velocidad i fiabilidad o la càrrega.
 
 ~~~
 
-#Clustering
+# Clustering
 
 **Clustering o agrupament:** un conjunt d'unitats funcionals interconnectades per mitjà d'una xarxa que actuen com una sola unitat.
 
@@ -113,17 +113,17 @@ Pfsense:
 
 - Cadascun dels ordinadors que formen part d'un clúster s'anomena "node".
 
-#Clustering: Tipus
+# Clustering: Tipus
 
 - És una classe d'arquitectura de computador paral·lel que es basa a unir màquines independents integrades per mitjà de xarxes d'interconexió, per obtenir un sistema coordinat, capaç de processar una càrrega
 
-Actualment existeixen dos tipus de clústers: 
+Actualment existeixen dos tipus de clústers:
 
 - D’alta disponibilitat
 
 - D’alt rendiment.
 
-#Clúster d’alta disponibilitat
+# Clúster d’alta disponibilitat
 
 **D'alta disponibilitat:** destinats a la necessitat de suportar un error de maquinari o programari. Si un dels nodes cau, la resta es reparteixen les seves tasques i intenten reactivar-lo. Aquest seria el cas de servidors web, ordinadors que han de prestar servei les 24h del dia els 365 dies de l'any.
 
@@ -133,34 +133,34 @@ Tenim dos tipus de cúster d’alta disponibilitat:
 
 - Configuració actiu-passiu (failover)
 
-#Configuració actiu-actiu: 
-##(Clúster d’alta disponibilitat)
+# Configuració actiu-actiu:
+## (Clúster d’alta disponibilitat)
 
-- Tots els nodes estan operatius executen els mateixos recursos de forma simultània. 
+- Tots els nodes estan operatius executen els mateixos recursos de forma simultània.
 
-- En cas de fallada en un dels nodes, la resta de nodes del clúster podrien oferir els mateixos serveis, però augmentaria la càrrega dels altres nodes i la qualitat del servei es podria veure afectada. 
+- En cas de fallada en un dels nodes, la resta de nodes del clúster podrien oferir els mateixos serveis, però augmentaria la càrrega dels altres nodes i la qualitat del servei es podria veure afectada.
 
 - Aquesta configuració permet aprofitar molt millor els recursos del clúster, ja que tots els nodes poden treballar de forma simultània. La implantació d’un solució d’aquest tipus és bastant més complexe que una configuració actiu-passiu.
 
-#Configuració actiu-passiu
-##(Clúster d’alta disponibilitat)
+# Configuració actiu-passiu
+## (Clúster d’alta disponibilitat)
 
-- **Configuració actiu-passiu (failover):** el node actiu està operatiu i és l’encarregat d’oferir el servei als usuaris, mentre que el node passiu està aturat i només entra en funcionament quan el node actiu pateix una fallada. 
+- **Configuració actiu-passiu (failover):** el node actiu està operatiu i és l’encarregat d’oferir el servei als usuaris, mentre que el node passiu està aturat i només entra en funcionament quan el node actiu pateix una fallada.
 
 Aquest tipus de configuració és menys eficient que l’actiu-actiu, ja que en un moment determinat només s’aprofiten els recursos d’un dels dos nodes.
 
-#Clúster d’alt rendiment
-- Es basen en un conjunt de màquines configurades per aconseguir una capacitat de càlcul màxima al repartir-se la càrrega dels processos entre els nodes existents. 
+# Clúster d’alt rendiment
+- Es basen en un conjunt de màquines configurades per aconseguir una capacitat de càlcul màxima al repartir-se la càrrega dels processos entre els nodes existents.
 
 - Utilitzats en la resolució d'algorismes científics, reproducció d'imatges 3D, compilació de grans codis de programació, xifrat de contrasenyes…
 
-#Independència en l'administració i configuració d'aplicacions i serveis.
+# Independència en l'administració i configuració d'aplicacions i serveis.
 
 - Mitjançant la virtualització es poden oferir de manera independent servidors dedicats suportats sota una mateixa màquina.
 
 - La virtualització permet l'execució simultània de diferents sistemes operatius mitjançant un únic equip per a realitzar-lo.
 
-#Virtualització
+# Virtualització
 
 - Permet realitzar una abstracció dels recursos d'un sistema creant una capa entre el hardware de l'equip físic i el sistema operatiu de la màquina virtual. Aquesta capa gestiona els recursos principals de l'equip amfitrió com són la CPU, memòria, xarxa i emmagatzematge.
 
@@ -187,17 +187,17 @@ Aquest tipus de configuració és menys eficient que l’actiu-actiu, ja que en 
 
 - **Millor gestió de recursos:** Es poden augmentar la memòria o emmagatzematge de la màquina física per fer-ho també de totes les màquines virtuals a la vegada. Això fa que s'aprofitin millor les inversions en hardware.
 
-#Avantatges de la virtualizació
+# Avantatges de la virtualizació
 
 - **Balanceig de recursos:** Es possible assignar un grup de servidors físics per a proporcionar recursos a les màquines virtuals i assignar una aplicació que faci un balanceig dels recursos, otorgant més memòria, recursos de procesador, emmagatzematge o ampla de banda de la xarxa a la màquina virtual que ho necessiti.
 
 
-#Avantatges de la virtualizació
+# Avantatges de la virtualizació
 
 - **Continuïtat de negoci i recuperació davant desastres:** En cas de fallada d’un sistema físic, els sistemes lògics continguts poden distribuir-se dinàmicament a d’altres sistemes.
 - **Virtual appliance:** màquines virtuals preconfigurades, carregar i funcionar. Màquines paquetitzades i preconfigurades per una función determinada (servidors de correu, bases de dades, centralites VoIP, aplicacions tancades).
 
-#Inconvenients de la virtualizació
+# Inconvenients de la virtualizació
 
 - Necessita hardware d’altes prestacions.
 - Molts sistemes depenen d’un sol equip físic (si no tenim sistemes HA).
