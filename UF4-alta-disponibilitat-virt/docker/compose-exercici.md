@@ -101,4 +101,4 @@ git clone https://github.com/jda/docker-moodle.git
 
 5. Comprova si funciona el Moodle.
 
-**NOTA:** Si en algun moment no ho veus clar, atura docker-compose i esborra contenidors i volums (penseu que els volums són persistents, i la BD queda amb les dades que es posin en instal·lar).
+**NOTA:** Si en algun moment no ho veus clar, atura docker-compose (i esborra contenidors i volums: penseu que els volums són persistents, i la BD queda amb les dades que es posin en instal·lar).
