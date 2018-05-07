@@ -91,10 +91,14 @@ networks:
 
 ~~~
 git clone https://github.com/jda/docker-moodle.git
-
 ~~~
 
 2. Modifica les variables d'entorn i afegeix les dades necessàries per a tenir el moodle executant-se en local, si cal (analitza el fitxer docker-compose.yml).
 
-3. Executa: docker-compose up -d
- 
+3. Modifica el docker-compose.yml per a que faci servir una imatge creada per tu en el servei moodle en lloc de baixar la imatge del repositori. Caldrà fer un docker build per a crear la imatge inicial.
+
+4. Executa: docker-compose up
+
+5. Comprova si funciona el Moodle.
+
+**NOTA:** Si en algun moment no ho veus clar, atura docker-compose i esborra contenidors i volums (penseu que els volums són persistents, i la BD queda amb les dades que es posin en instal·lar).

@@ -15,16 +15,16 @@ https://github.com/wsargent/docker-cheat-sheet
 
 **Containers**
 
-- Abstracció a la capa d'aplicació que empaqueta codi i dependències. 
+- Abstracció a la capa d'aplicació que empaqueta codi i dependències.
 - Es pot executar múltiples containers a la mateixa màquina i compartir el Kernel del sistema operatiu amb altres containers.
-- Cada container s'executa com un procés aïllat en l'espai d'execució de l'usuari. 
-- Ocupen molt menys espai que les màquines virtuals (de l'ordre de centenars de MB) i es posen en marxa pràcticament a l'instant. 
+- Cada container s'executa com un procés aïllat en l'espai d'execució de l'usuari.
+- Ocupen molt menys espai que les màquines virtuals (de l'ordre de centenars de MB) i es posen en marxa pràcticament a l'instant.
 
 **Màquines virtuals**
 
-- Són una abstracció de màquines físiques de manera que tenim múltiples màquines en una sola. 
+- Són una abstracció de màquines físiques de manera que tenim múltiples màquines en una sola.
 - L'hipervisor permet que múltiples VM funcionin sobre una sola màquina real.
-- Cada còpia de la VM inclou una còpia completa del sistema operatiu, una o més aplicacions i tots els binaris i llibreries. Això fa que ocupin GB. 
+- Cada còpia de la VM inclou una còpia completa del sistema operatiu, una o més aplicacions i tots els binaris i llibreries. Això fa que ocupin GB.
 - Les màquines virtuals també són més lentes en arrencar.
 
 ![](imgs/20180416-124137.png)
@@ -57,7 +57,7 @@ docker run hello-world
 docker run -it ubuntu bash
 ~~~
 
-## Procediment per a crear una imatge 
+## Procediment per a crear una imatge
 
 https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
 
@@ -82,7 +82,7 @@ CMD /usr/games/fortune -a | cowsay
 - CMD crida a la comanda que es llançarà un cop creat el contenidor.
 
 ## Construir la imatge
-- Crear la imatge a partir del Dockerfile (el Docker busca un fitxer Dockerfile al directori actual "." ). Amb -t posem un tag. 
+- Crear la imatge a partir del Dockerfile (el Docker busca un fitxer Dockerfile al directori actual "." ). Amb -t posem un tag.
 
 ~~~
 // Generar imatge amb el tag "miballena" agafant configuració del directori actual "."
@@ -93,7 +93,7 @@ miballena           latest              28238da0f1bd        52 seconds ago      
 
 ~~~
 
-- Podem posar-li tag més endavant (podem posar el nostre nom de DockerHub davat el nom de la imatge, i la versió): 
+- Podem posar-li tag més endavant (podem posar el nostre nom de DockerHub davat el nom de la imatge, i la versió):
 
 ~~~
 docker tag 7d9495d03763 pau/docker-whale:latest
@@ -124,7 +124,7 @@ docker rmi -f 7d9495d03763
 
 - **docker images:** llista de les imatges guardades en local
 - **docker history id-imatge:** mostra història d’una imatge
-- **docker inspect id-imatge:** informació de baix nivell d’objectes Docker 
+- **docker inspect id-imatge:** informació de baix nivell d’objectes Docker
 - **docker save/load id-imatge:** Grava o recupera una o més imatges a un arxiu tar
  - **docker rmi id-imatge:** Esborrar imatge local
 - **docker search "ubuntu apache django":** Buscar imatges al repositori.
@@ -159,7 +159,7 @@ ubuntu              latest              0ef2e08ed3fa        13 months ago       
 
 ## Gestió de contenidors
 
-- **docker rm:** Esborrar contenidor 
+- **docker rm:** Esborrar contenidor
 - **docker run:** Executar contenidor
 - **docker stats:** Display a live stream of container(s) resource usage statistics
 - **docker top:** Mostrar els processos que s'executen en un container
@@ -210,9 +210,9 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
 ~~~
 
-- En executar docker run (o cridar docker-compose), si no s’especifica crea un volum sense nom (guardat físicament a /var/lib/docker/volumes). 
+- En executar docker run (o cridar docker-compose), si no s’especifica crea un volum sense nom (guardat físicament a /var/lib/docker/volumes).
 
-- Si s’especifica, pot muntar-se volums d’algun altre contenidor (--volumes-from) o una carpeta de la màquina amfitriona (si es posa davant la ruta on es muntarà al contenidor). 
+- Si s’especifica, pot muntar-se volums d’algun altre contenidor (--volumes-from) o una carpeta de la màquina amfitriona (si es posa davant la ruta on es muntarà al contenidor).
 
 - Si posem :ro es muntarà només lectura. Podem posar oipcionalment un nom al volum
 
@@ -222,7 +222,7 @@ docker create -v /dbdata --name dbstore     // Per crear el volum abans si es vo
 ~~~
 
  Note: If any build steps change the data within the volume after it has been declared (DockerFile), those changes will be discarded.
- 
+
 Si volem saber on està un volum, docker inspect i mirar els “mounts”.
 
 ## Xarxes a Docker
@@ -230,16 +230,16 @@ Si volem saber on està un volum, docker inspect i mirar els “mounts”.
 - Bridge: Xarxa per a un sol host executant el docker engine. Permet connectar-hi varis containers. Xarxa per defecte.
 - Overlay: Per connectar varis hosts (xarxa avançada)
 
-Per llançar el contenidor i connectar-lo a una xarxa: 
+Per llançar el contenidor i connectar-lo a una xarxa:
 
 ~~~
 docker run -itd --name=networktest ubuntu (interactive, consola, daemon)
 ~~~
 
-Per veure per exemple les IP’s de la xarxa: 
+Per veure per exemple les IP’s de la xarxa:
 
 ~~~
-docker network inspect bridge 
+docker network inspect bridge
 ~~~
 
 ## Gestió de xarxa
@@ -259,12 +259,22 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 608eb1ee76cb        ubuntu              "/bin/bash"              12 seconds ago      Up 11 seconds                              loving_varahamihira
 ~~~
 
-## Dockeritzar aplicacions 
+## Dockeritzar aplicacions
 - https://docs.docker.com/engine/examples/running_ssh_service/
 - https://docs.docker.com/engine/examples/postgresql_service/
 - http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-applications/
 
 ## Comandes útils
+
+- Esborrar totes les instàncies
+~~~
+// De contenidors
+$ docker ps -aq | xargs docker rm
+
+// De volums
+$ docker volume ls -q | xargs docker volume rm
+
+~~~
 
 - List Docker CLI commands
 
