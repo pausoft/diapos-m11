@@ -188,8 +188,9 @@ vagrant@precise64:~$ wget -qO- 127.0.0.1
 config.vm.network :forwarded_port, guest: 80, host: 8080
 config.vm.network :forwarded_port, guest: 443, host: 8443
 ~~~
+- Es pot indicar "guest_ip:<ip>" i "host_ip:<ip>" (si no, es reenvien totes les ips). També "id:cadena" per posar nom a la regla NAT (es veu a VirtualBox).
 
-- Més opcions de xarxa (si cal activar els dos protocols, ja que només es fa per defecte amb tcp)
+- Més opcions de xarxa (si cal activar els dos protocols, ja que només es fa per defecte amb tcp).
 
 ~~~
 Vagrant.configure("2") do |config|
@@ -206,6 +207,40 @@ $ vagrant reload
 ~~~
 
 Provar al navegador: http://127.0.0.1:4567
+
+## Configurar xarxes internes
+
+- Els apràmetres de les màquines virtuals es configuren automàticament en Vagrant. Si no es vol automàtic, cal indicar el paràmetre:
+
+~~~
+config.vm.network "private_network", ip: "192.168.50.4", auto_config: false
+~~~
+
+- DHCP
+
+~~~
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network", type: "dhcp"
+end
+~~~
+
+- Estàtica
+
+~~~
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network", ip: "192.168.50.4"
+end
+~~~
+
+- IPv6
+
+~~~
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network",
+    ip: "fde4:8dba:82e1::c4",
+    netmask: "96"
+end
+~~~
 
 ## Crear compartició a internet
 
