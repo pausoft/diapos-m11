@@ -82,6 +82,8 @@ networks:
 ~~~
 ## Exercicis
 
+- Construeix el projecte docker compose d'exemple de https://docs.docker.com/compose/gettingstarted/
+
 - Construeix un sistema Wordpress a partir de dos contenidors Docker
   https://docs.docker.com/compose/wordpress/
 
