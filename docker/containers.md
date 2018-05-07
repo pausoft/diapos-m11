@@ -140,7 +140,7 @@ ubuntu              latest              0ef2e08ed3fa        13 months ago       
 
 ~~~
 
-##Gestió de contenidors
+## Gestió de contenidors
 
 - **docker attach:** Reconnectar a contenidor en marxa (aturar abans amb CTRL+P i CTRL+Q)
 - **docker exec:** Executar una comanda en un container en execució.
@@ -148,7 +148,7 @@ ubuntu              latest              0ef2e08ed3fa        13 months ago       
 - **docker kill:** Matar un o més containers en execució.
 - **docker logs:** Llegir logs d'un container.
 
-##Gestió de contenidors
+## Gestió de contenidors
 
 - **docker pause/unpause:** Pausa tots els processos en un o més containers.
 - **docker port:** Llista mapes de ports o un mapa específic del container.
@@ -157,7 +157,7 @@ ubuntu              latest              0ef2e08ed3fa        13 months ago       
 - **docker start/stop/restart:** Start/stop/restart un o més containers
 - **docker commit:** Guardar els canvis del contenidor en una imatge nova
 
-##Gestió de contenidors
+## Gestió de contenidors
 
 - **docker rm:** Esborrar contenidor 
 - **docker run:** Executar contenidor
