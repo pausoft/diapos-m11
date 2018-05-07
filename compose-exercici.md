@@ -19,7 +19,7 @@ $ mkdir composetest
 $ cd composetest
 ~~~
 
-- Crear Dockerfile al directori (si hi ha més d'un, posarem la ruta diferenciada a cada deirectiva "build").
+- Crear Dockerfile al directori (si hi ha més d'un, posarem la ruta diferenciada a cada directiva "build").
 - Als dockerfiles posar la configuració de cada imatge que volem.
 - ATENCIÓ: No posar res que no calgui al directori, ja que el constructor mou tot al directori /var/lib/docker/tmp i pot omplir el volum / del sistema!!! 
 
