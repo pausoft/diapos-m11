@@ -1,4 +1,4 @@
-#Virtualització
+# Virtualització
 
 ## Què és?
 Una capa de hw/sw que amaga els elements reals per a presentar uns recursos i informació (sistemes virtuales) a l'usuari i/o gestor sense necesitat d'accedir directamente als elements discrets (disc, memòria, CPU, xarxa...).”
