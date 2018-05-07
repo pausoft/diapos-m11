@@ -13,7 +13,6 @@ Una capa de hw/sw que amaga els elements reals per a presentar uns recursos i in
 
 ![](imgs/20180416-112211.png)
 
-
 ## Emulació
 
 - **Virtualització Hardware:** una capa d'emulació software permet accedir als recursos de la plataforma virtualitzada (s'emula una plataforma sobre una altra). Ex: Bochs, DOSBox, etc.
