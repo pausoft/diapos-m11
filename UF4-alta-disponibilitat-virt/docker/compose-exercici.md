@@ -94,7 +94,7 @@ git clone https://github.com/jda/docker-moodle.git
 
 ~~~
 
-2. Modifica les variables d'entorn i afegeix les dades necessàries per a tenir el moodle executant-se en local.
+2. Modifica les variables d'entorn i afegeix les dades necessàries per a tenir el moodle executant-se en local, si cal (analitza el fitxer docker-compose.yml).
 
 3. Executa: docker-compose up -d
  
