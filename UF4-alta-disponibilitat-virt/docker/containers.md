@@ -11,7 +11,7 @@ https://github.com/wsargent/docker-cheat-sheet
 
 ![](imgs/20180416-124035.png)
 
-## Containers vs màquines virtuals
+## Containers vs màquines virtuals 
 
 **Containers**
 
