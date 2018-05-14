@@ -6,7 +6,7 @@ Es tracta de construir una xarxa d'empresa amb un firewall implementat amb **IPT
 
 1. La primera externa, dona accés a Internet i fa NAT, de manera que les adreces privades, tant de la DMZ com la xarxa interna no es poden veure des de fora.
 
-1. La segona interna, cap a la xarxa local de l'empresa.
+1. La segona interna, cap a la xarxa local de l'empresa
 
 1. La tercera interna, cap a la xarxa DMZ de l'empresa, on residiran els servidors públics de l'empresa.
 

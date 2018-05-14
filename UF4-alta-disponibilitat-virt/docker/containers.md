@@ -7,11 +7,11 @@ https://github.com/wsargent/docker-cheat-sheet
 - Paquet de programari executable lleuger, independent i autosuficient.
 - Inclou tot el necessari per a còrrer: codi, biblioteques, eines de sistema,configuració, etc.
 - El contenidor sempre s'executa en diferents plataformes de la mateixa manera, sense canviar el comportament.
-- S'aïlla el programari del seu entorn i permet que no hi hagi canvis de comportament en les etapes de desenvolupament i les de desplegament per producció.
+- S'aïlla el programari del seu entorn i permet que no hi hagi canvis de comportament en les etapes de desenvolupament i les de desplegament per producció
 
 ![](imgs/20180416-124035.png)
 
-## Containers vs màquines virtuals 
+## Containers vs màquines virtuals
 
 **Containers**
 
