@@ -1,0 +1,8 @@
+version: '3'
+services:    
+  web:        // Nom del servei
+    build: .    // Construir imatge des del directori actual (busca el Dockerfile al directori indicat)
+    ports:      // Ports exposats del contenidor i en quin port es veuran en l’equip físic
+     - "8080:80"
+    volumes:    // Muntar volums. En aquest cas, directori actual al directori /code del contenidor. Això permet canviar el codi sense fer rebuild
+     - /home/pau/volums/apachehtml:/var/www/html

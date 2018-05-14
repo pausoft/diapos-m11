@@ -18,7 +18,7 @@ $ docker pull --help
 
 ~~~
 $ docker login -u pautome
-Password: 
+Password:
 Login Succeeded
 ~~~
 
@@ -64,12 +64,12 @@ $ docker inspect elated_shannon
 ]
 ~~~
 
-- Veiem al final, a l'apartat Network que l'adreça IP del contenidor és 172.17.0.2. 
+- Veiem al final, a l'apartat Network que l'adreça IP del contenidor és 172.17.0.2.
 - Al navegador: http://172.17.0.2
 - Guardem els canvis al contenidor i el posem al nostre repositori. Ens **desconnectem** de la consola de docker amb CTRL+P+Q i executem:
 
 ~~~
-// Crear una imatge nova amb els canvis fets a la imatge 
+// Crear una imatge nova amb els canvis fets a la imatge
 // posar-li nom "miapache" al nostre repositori (canviar pautome pel vostre):
 
 $ docker commit -a "Pau Tomé <pau.tome@iescarlesvallbona.cat>" elated_shannon pautome/miapache
@@ -85,14 +85,14 @@ The push refers to repository [docker.io/pautome/miapache]
 - Reconnecta al contenidor. Veuràs que la consola està blocada per l'Apache. Pots fer CTRL+C per que torni la consola (o picar ENTER):
 
 ~~~
-$ docker attach elated_shannon 
+$ docker attach elated_shannon
 ^C
-root@4213ef40735c:/# 
+root@4213ef40735c:/#
 ~~~
 
 - Ara l'Apache no està funcionant. Pots provar amb una finestra d'incògnit nova.
 
-- Sortim del contenidor amb "exit" i veurem que no hi ha cap contenidor funcionant (docker ps). 
+- Sortim del contenidor amb "exit" i veurem que no hi ha cap contenidor funcionant (docker ps).
 
 - Iniciem de nou el contenidor creat i posem en marxa apache. Ara iniciem mapejant els ports del contenidor a la màquina física (paràmetre "-p iphost:porthost:portcontenidor", ip-host és opcional). Això permetrà accedir al web del contenidor des d'un altre equip fora del host:
 
@@ -131,7 +131,7 @@ $ echo Apache des de la màquina física > index.html
 
 ~~~
 $ docker run -it -v /home/pau/volums/apachehtml:/var/www/html pautome/miapache bash
-~~~ 
+~~~
 
 - Prova a crear un nou fitxer des de la màquina host i mira des del contenidor que hi és.
 - Edita el fitxer index.html des de l'equip host per canviar la pàgina inicial de l'apache. Comprova que en el navegador veus els canvis.
@@ -154,8 +154,15 @@ apt-get clean && apt-get autoclean
 # Caldrà exportar amb -p al docker run
 EXPOSE 80
 
-# Infoma que el volum anirà a aquest punt de muntatge al contenidor, però caldrà al docker run indicar quin és el volum o directori del host
+# Informa que el volum anirà a aquest punt de muntatge al contenidor, però caldrà al docker run indicar quin és el volum o directori del host
 VOLUME ["/var/www/html/"]
+
+# Comanda que executa el contenidor un cop arrencat. És important tenir en compte que si el procés iniciat
+# acaba, el contenidor és destruït. Si volem un servei, cal que aquest procés quedi esperant i no alliberi la consola
+# No es pot posar en marxa un dimoni amb systemctl o service ja que allibera la consola
+# En aquest cas, la comanda executa apache en segon pla però no allibera la consola
+CMD /usr/sbin/apache2ctl -D FOREGROUND
+
 ~~~
 
 - Un cop fet, executem:
@@ -165,4 +172,30 @@ $ docker build -t <tag_img> <ruta_dockerfile>
 
 // Cas en concret
 $ docker build -t pautome/miapache .
+~~~
+
+- I executem deixant el contenidor com a dimoni (no interactiu), per provar que funciona el lloc http://localhost:8080
+
+~~~
+$ docker run -d -p 8080: 80 -v /home/pau/volums/apachehtml:/var/www/html pautome/miapache
+~~~
+
+- Recordeu aturar els contenidors si hi ha conflicte.
+- Ara crearem el fitxer Dockercompose: docker-compose.yml. No hi poseu els comentaris. Docker compose executarà (docker run) cada un dels serveis definits.
+
+~~~
+version: '3'
+services:    
+  web:        // Nom del servei
+    build: .    // Construir imatge des del directori actual (busca el Dockerfile al directori indicat)
+    ports:      // Ports exposats del contenidor i en quin port es veuran en l’equip físic
+     - "8080:80"
+    volumes:    // Muntar volums. En aquest cas, directori actual al directori /code del contenidor. Això permet canviar el codi sense fer rebuild
+     - /home/pau/volums/apachehtml:/var/www/html
+~~~
+
+- Executem el sistema i provem que funciona (amb -d hp fem alliberant la consola):
+
+~~~
+docker-compose up -d
 ~~~

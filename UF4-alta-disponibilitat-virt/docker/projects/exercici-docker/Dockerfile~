@@ -1,0 +1,20 @@
+FROM library/ubuntu:16.04
+MAINTAINER Pau Tomé <pau.tome@iescarlesvallbona.cat>
+
+RUN apt-get update && \
+apt-get install -y apache2 && \
+apt-get clean && apt-get autoclean
+
+# Aquesta comanda en realitat no fa l'exportació del port, però ajuda a saber quins ports s'esportaran.
+# Caldrà exportar amb -p al docker run
+EXPOSE 80
+
+# Informa que el volum anirà a aquest punt de muntatge al contenidor, però caldrà al docker run indicar quin és el volum o directori del host
+VOLUME ["/var/www/html/"]
+
+# Comanda que executa el contenidor un cop arrencat. És important tenir en compte que si el procés iniciat
+# acaba, el contenidor és destruït. Si volem un servei, cal que aquest procés quedi esperant i no alliberi la consola
+# No es pot posar en marxa un dimoni amb systemctl o service ja que allibera la consola
+# En aquest cas, la comanda executa apache en segon pla però no allibera la consola
+CMD CMD /usr/sbin/apache2ctl -D FOREGROUND
+
