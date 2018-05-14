@@ -18,6 +18,8 @@ També caldrà configurar 3 màquines virtuals:
 
 ## Requisits
 
+1. Les adreces de la DMZ seran de la xarxa 192.168.100+n.0 i les de la xarxa local seran de la xarxa 192.168.n.0. Per a calcular n, usarem el número d'ordre alfabètic de la primera lletra del nostre segon cognom.
+
 1. A la DMZ tindrem els serveis Web, FTP, Proxy Squid i ssh (al mateix servidor). La resta de ports del servidor han d'estar tancats.
 
 1. Totes les màquines de la xarxa local podran accedir als serveis web d'internet (estàndar i segur) NOMÉS via el servidor Proxy. Qualsevol accés directe a Internet s'ha de blocar.
