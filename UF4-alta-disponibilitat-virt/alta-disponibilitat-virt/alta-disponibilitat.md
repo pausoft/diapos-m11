@@ -51,7 +51,7 @@ Exemple de tècniques a usar:
 
 **Balancejador de càrrega:** dispositiu hardware o software connectat a un conjunt de servidors que assigna i reparteix les peticions que provenen dels clients als diversos servidores als que es connecta.
 
-![Balanceig](imgs/20180412-083315.png){ width=75% }
+![Balanceig](imgs/20180412-083315.png)
 Per a repartir la càrrega de forma equilibrada utilitzen algorismes com Round Robin, per exemple.    
 
 # SAN
