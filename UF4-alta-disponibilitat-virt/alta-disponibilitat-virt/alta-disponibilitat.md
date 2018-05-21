@@ -4,7 +4,7 @@
 **2017/2018**
 
 # Alta disponibilitat
-**Definició: **
+**Definició:**
 
 Capacitat de que aplicacions i dades es trobin operatius per als usuaris autoritzats en tot moment, degut al seu caràcter crític.
 
@@ -25,9 +25,9 @@ Exemples:
 
 #Solucions d’alta disponibilitat
 
-- **Redundància, distribució i fiabilitat en la gestió de la informació: ** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
+- **Redundància, distribució i fiabilitat en la gestió de la informació:** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
 
-Exemple de tècniques a usar:
+- Exemple de tècniques a usar:
 
 ~~~
    - Sistemas RAID d’emmagatzematge
@@ -82,7 +82,7 @@ por la SAN. L'administrador del sistema te el mateix accés i drets a la LUN com
 - **iSCSI:** Tecnología que envía comandes SCSI sobre una xarxa TCP/IP. No és tan ràpid com una xarxa Fibre Channel, perè estalvia costos, ja que usa un maquinari de xarxa menys costós (simples targetes Ethernet). S'aprofita de la tecnologia Gigabit Ethernet.
 (https://es.wikipedia.org/wiki/ISCSI)
 
-#Balanceig de càrrega
+# Balanceig de càrrega
 
 **Utilitat:** Poder repartir la càrrega y excloure aquelles connexions de destí que es trobin caigudes en un moment determinat.
 
