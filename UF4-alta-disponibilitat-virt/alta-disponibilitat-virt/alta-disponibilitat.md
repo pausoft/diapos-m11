@@ -4,8 +4,7 @@
 **2017/2018**
 
 # Alta disponibilitat
-**Definició: **
-
+**Definició:**
 Capacitat de que aplicacions i dades es trobin operatius per als usuaris autoritzats en tot moment, degut al seu caràcter crític.
 
 ~~~
@@ -13,7 +12,7 @@ Les empreses amb alta disponibilitat són més tolerants a fallades del
 sistema, minimitzant el risc d'inactivitat.
 ~~~
 
-- **Redundància en dispositius hardware: **possibilita, en cas de fallada, continuïtat del servei.
+**Redundància en dispositius hardware: ** possibilita, en cas de fallada, continuïtat del servei.
 
 Exemples:
 
@@ -25,7 +24,7 @@ Exemples:
 
 #Solucions d’alta disponibilitat
 
-- **Redundància, distribució i fiabilitat en la gestió de la informació: ** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
+**Redundància, distribució i fiabilitat en la gestió de la informació: ** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
 
 Exemple de tècniques a usar:
 
