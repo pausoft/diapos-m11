@@ -5,7 +5,10 @@
 
 # Alta disponibilitat
 **Definició:**
+<<<<<<< HEAD
 
+=======
+>>>>>>> d52cbf06d391d3de1d00fee1e8602b30ecfd57bb
 Capacitat de que aplicacions i dades es trobin operatius per als usuaris autoritzats en tot moment, degut al seu caràcter crític.
 
 ~~~
@@ -13,7 +16,7 @@ Les empreses amb alta disponibilitat són més tolerants a fallades del
 sistema, minimitzant el risc d'inactivitat.
 ~~~
 
-- **Redundància en dispositius hardware: **possibilita, en cas de fallada, continuïtat del servei.
+**Redundància en dispositius hardware: ** possibilita, en cas de fallada, continuïtat del servei.
 
 - Exemples:
 
@@ -25,7 +28,11 @@ sistema, minimitzant el risc d'inactivitat.
 
 #Solucions d’alta disponibilitat
 
+<<<<<<< HEAD
 - **Redundància, distribució i fiabilitat en la gestió de la informació:** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
+=======
+**Redundància, distribució i fiabilitat en la gestió de la informació: ** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
+>>>>>>> d52cbf06d391d3de1d00fee1e8602b30ecfd57bb
 
 - Exemple de tècniques a usar:
 
@@ -51,7 +58,7 @@ sistema, minimitzant el risc d'inactivitat.
 
 **Balancejador de càrrega:** dispositiu hardware o software connectat a un conjunt de servidors que assigna i reparteix les peticions que provenen dels clients als diversos servidores als que es connecta.
 
-![Balanceig](imgs/20180412-083315.png){ width=75% }
+![Balanceig](imgs/20180412-083315.png)
 Per a repartir la càrrega de forma equilibrada utilitzen algorismes com Round Robin, per exemple.    
 
 # SAN
