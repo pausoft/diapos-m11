@@ -15,7 +15,7 @@ sistema, minimitzant el risc d'inactivitat.
 
 - **Redundància en dispositius hardware: **possibilita, en cas de fallada, continuïtat del servei.
 
-Exemples:
+- Exemples:
 
 ~~~
 - Servidors duplicats (balanceig, clúster).
