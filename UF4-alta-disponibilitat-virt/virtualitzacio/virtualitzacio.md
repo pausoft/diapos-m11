@@ -81,3 +81,4 @@ Ex: VMware ESXi (propietari), Xen (lliure), Citrix XenServer (gratis limitat a 4
 - https://es.wikipedia.org/wiki/Paravirtualizaci%C3%B3n
 - https://es.slideshare.net/pakus/virtualizacion-3246213
 - https://www.vmware.com/techpapers/2007/understanding-full-virtualization-paravirtualizat-1008.html
+- Appliances: https://www.infoworld.com/article/2626259/data-center/server-virtualization-eight-great-virtual-appliances-for-vmware-free-for-the-downloading.html
