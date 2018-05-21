@@ -5,10 +5,7 @@
 
 # Alta disponibilitat
 **Definició:**
-<<<<<<< HEAD
 
-=======
->>>>>>> d52cbf06d391d3de1d00fee1e8602b30ecfd57bb
 Capacitat de que aplicacions i dades es trobin operatius per als usuaris autoritzats en tot moment, degut al seu caràcter crític.
 
 ~~~
@@ -26,13 +23,9 @@ sistema, minimitzant el risc d'inactivitat.
 - Link aggregation o bonding o port trunking: Dispositius de xarxa redundants que eviten caigudes  de connectivitat (https://en.wikipedia.org/wiki/Link_aggregation).
 ~~~
 
-#Solucions d’alta disponibilitat
+# Solucions d’alta disponibilitat
 
-<<<<<<< HEAD
 - **Redundància, distribució i fiabilitat en la gestió de la informació:** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
-=======
-**Redundància, distribució i fiabilitat en la gestió de la informació: ** S’ha de procurar que la informació pugui ser recuperada en el moment que es necessiti, evitar la pèrdua  o bloqueig tant per atac, mala operació accidental o situacions fortuïtes.
->>>>>>> d52cbf06d391d3de1d00fee1e8602b30ecfd57bb
 
 - Exemple de tècniques a usar:
 
@@ -56,7 +49,7 @@ sistema, minimitzant el risc d'inactivitat.
 
 # Balanceig de càrrega
 
-**Balancejador de càrrega:** dispositiu hardware o software connectat a un conjunt de servidors que assigna i reparteix les peticions que provenen dels clients als diversos servidores als que es connecta.
+- **Balancejador de càrrega:** dispositiu hardware o software connectat a un conjunt de servidors que assigna i reparteix les peticions que provenen dels clients als diversos servidores als que es connecta.
 
 ![Balanceig](imgs/20180412-083315.png)
 Per a repartir la càrrega de forma equilibrada utilitzen algorismes com Round Robin, per exemple.    
@@ -68,7 +61,7 @@ Per a repartir la càrrega de forma equilibrada utilitzen algorismes com Round R
 ![](imgs/20180414-205835.png)
 
 # SAN
-- Una xarxa SAN es distingeix d'altres modes d'emmagatzemament en xarxa pel mode d'accès a baix nivell: el tipus de tràfic en una SAN és molt semblant al dels discos durs com ATA, SATA i SCSI. (https://es.wikipedia.org/wiki/Red_de_%C3%A1rea_de_almacenamiento)
+- Una **xarxa SAN** es distingeix d'altres modes d'emmagatzemament en xarxa pel mode d'accès a baix nivell: el tipus de tràfic en una SAN és molt semblant al dels discos durs com ATA, SATA i SCSI. (https://es.wikipedia.org/wiki/Red_de_%C3%A1rea_de_almacenamiento)
 
 - **Varis servidors poden tenir accés al mateix volum de dades** per un o varis camins depenent de la topologia i configuració de la SAN. És l'escenari adequat pels entorns crítics i per la implementació de clusters de servidors.
 
@@ -91,11 +84,11 @@ por la SAN. L'administrador del sistema te el mateix accés i drets a la LUN com
 
 # Balanceig de càrrega
 
-**Utilitat:** Poder repartir la càrrega y excloure aquelles connexions de destí que es trobin caigudes en un moment determinat.
+- **Utilitat:** Poder repartir la càrrega y excloure aquelles connexions de destí que es trobin caigudes en un moment determinat.
 
 **Exemple:** Un client no pot contactar amb el seu servidor DNS (caigut). El balancejador de càrrega detectarà que està inactiva i les peticions s’enviaran a una altre servidor DNS connectat al dispositiu encarregat del balanceig de la carga.
 
-**Aplicacions:** Repartir peticions de xarxa entre múltiples servidors web, DNS, etc. redundants, o entre vàries connexions de xarxa pública independents.
+- **Aplicacions:** Repartir peticions de xarxa entre múltiples servidors web, DNS, etc. redundants, o entre vàries connexions de xarxa pública independents.
 
 # Balanceig de càrrega
 
@@ -114,7 +107,7 @@ Pfsense:
 
 # Clustering
 
-**Clustering o agrupament:** un conjunt d'unitats funcionals interconnectades per mitjà d'una xarxa que actuen com una sola unitat.
+- **Clustering o agrupament:** un conjunt d'unitats funcionals interconnectades per mitjà d'una xarxa que actuen com una sola unitat.
 
 ![](imgs/20180413-082426.png)
 
