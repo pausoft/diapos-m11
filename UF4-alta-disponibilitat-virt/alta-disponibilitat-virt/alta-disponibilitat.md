@@ -45,7 +45,7 @@ sistema, minimitzant el risc d'inactivitat.
 
 - **Balanceig de càrrega i Clustering:** Redundància de servidors i distribució de tasques i comunicacions.
 
-- **Independència en l’administració i configuració de aplicacions i serveis:** Mitjançant la virtualització.
+- **Independència en l’administració i configuració d'   aplicacions i serveis:** Mitjançant la virtualització.
 
 # Balanceig de càrrega
 
@@ -140,7 +140,7 @@ Tenim dos tipus de cúster d’alta disponibilitat:
 
 - En cas de fallada en un dels nodes, la resta de nodes del clúster podrien oferir els mateixos serveis, però augmentaria la càrrega dels altres nodes i la qualitat del servei es podria veure afectada.
 
-- Aquesta configuració permet aprofitar molt millor els recursos del clúster, ja que tots els nodes poden treballar de forma simultània. La implantació d’un solució d’aquest tipus és bastant més complexe que una configuració actiu-passiu.
+- Aquesta configuració permet aprofitar molt millor els recursos del clúster, ja que tots els nodes poden treballar de forma simultània. La implantació d’un solució d’aquest tipus és bastant més complexa que una configuració actiu-passiu.
 
 # Configuració actiu-passiu
 ## (Clúster d’alta disponibilitat)
