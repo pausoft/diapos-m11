@@ -172,7 +172,7 @@ Aquest tipus de configuració és menys eficient que l’actiu-actiu, ja que en 
 # Avantatges de la virtualizació
 
 - **Estalvi de costos:** Podem adquirir un únic servidor, més potent, i no haver de comprar més servidors solament anar creant-les en el gestor de màquines virtuals. També permet estalvi en el cost de manteniment i en el de personal a més d'estalviar espai i energia.
-- **Creixement més flexible:** Instal·lar un nou servidor és molt més senzill i ràpid davant de fer-lo amb un de físic.
+- **Creixement més flexible:** Instal·lar un nou servidor és molt més senzill i ràpid davant de fer-ho amb un de físic.
 - **Administració simplificada:** En la consola del gestor de màquines virtuals podem augmentar o reduir els recursos per a una determinada màquina, reiniciar-la, instal·lar actualitzacions o simplement esborrar-la.
 
 # Avantatges de la virtualizació
